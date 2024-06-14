@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scroll Animation</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .title {
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    transition: all 0.3s;
+  }
+  .title.animate {
+    color: #ff4500;
+    transform: scale(1.2);
+  }
+</style>
+</head>
+<body>
+<div class="title">Scroll down to see the animation</div>
+<div style="height: 200vh;"></div>
+<script>
+  window.addEventListener('scroll', () => {
+    const title = document.querySelector('.title');
+    const scrollPosition = window.scrollY;
+    if (scrollPosition > 100) {
+      title.classList.add('animate');
+    } else {
+      title.classList.remove('animate');
+    }
+  });
+</script>
+</body>
+</html>
